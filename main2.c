@@ -4,25 +4,23 @@
 #include <math.h>
 
 int main(void){
-    
     //수업내용
-    double a1 = 10.234;
-    printf("%f",a1);
-    double b1;
-    printf("\n 실수를 입력하세요 > ");
-    scanf("%lf", &b1);
-    printf("%f", b1);
+//    double a1 = 10.234;
+//    printf("%f",a1);
+//    double b1;
+//    printf("\n 실수를 입력하세요 > ");
+//    scanf("%lf", &b1);
+//    printf("%f", b1);
 
     //test
-    unsigned int i = 10;
-    long l1 = 10;
-    long long ll = 10;
-    unsigned long ul = 10;
-    unsigned long long ull = 10;
+//    unsigned int i = 10;
+//    long l2 = 10;
+//    long long ll = 10;
+//    unsigned long ul = 10;
+//    unsigned long long ull = 10;
+//
+//    printf("%u %ld, %lld, %lu, %llu", i, l2, ll, ul, ull);
 
-    printf("%u %ld, %lld, %lu, %llu", i, l1, ll, ul, ull);
-
-    
     //실습1
     double a,b,c = 0;
     printf("네모 - 동그라미 * 세모 = ? \n");
@@ -71,7 +69,7 @@ int main(void){
 
     s1 = pow((x1-x2),2);
     s2 = pow((y1-y2),2);
-    l = sqrt(s1 + s2);
+    l = sqrt(s1+s2);
     printf("\n두 점 (%.2f,%.2f)와 (%.2f,%.2f) 사이의 거리는 %.2f입니다.", x1, y1, x2, y2, l);
     
     //실습7
