@@ -65,7 +65,7 @@ int main(void){
         j = j+k*(k+1);
         k++;
     }
-    
+
     //실습3
     int nn, i, flag = 0;
     printf("n = ");
@@ -89,7 +89,7 @@ int main(void){
         }
 
     }
-    
+
     //실습4
     printf("<구구단 짝수단 출력>\n");
 
@@ -101,7 +101,7 @@ int main(void){
         }
         printf("\n");
     }
-    
+
 
     //실습5
     int n1, m1;
@@ -125,7 +125,7 @@ int main(void){
         printf("*");
     }
     printf("\n");
-    
+
     //실습6-1
     int n2, m2;
     printf("n m = ");
@@ -149,16 +149,68 @@ int main(void){
         }
         printf("\n");
     }
-    
+
     //실습6-3
-    
-    
+    int n4, m4;
+    printf("n m = ");
+    scanf("%d%d", &n4, &m4);
 
-    
+    for(int i = 1; i <= n4; i++){ //행 -> 행은 홀수부터 출력된다!!
+        if(i%2 == 0){ //짝수행
+            for(int j = m4; j >= 1; j--){ //열
+                printf("%d", j);
+            }
+            printf("\n");
+        } else { //홀수행
+            for(int j = 1; j <= m4; j++){ //열
+                printf("%d", j);
+            }
+            printf("\n");
+        }
+    }
 
-    
-    
-    
+    //실습6-4 : 두자리인데, 한자리이면 십의 자리에 0출력
+    int n5, m5;
+    printf("n m = ");
+    scanf("%d%d", &n5, &m5);
+
+    for(int i = 1; i <= n5; i++){ //행
+        for(int j = 1; j <= m5; j++){ //열
+            printf("%02d ", j);
+        }
+        printf("\n");
+    }
+
+    //실습7-1
+    int subject, score, sum = 0; //배열을 사용해도 되고, 누적되도록 해도 된다.
+    printf("과목 개수 = ");
+    scanf("%d", &subject);
+    for(int i = 1; i <= subject; i++){
+        printf("과목%d 점수 = ", i);
+        scanf("%d", &score);
+        sum += score;
+    }
+    printf("총점 = %d / %d \n", sum, subject*100);
+    printf("평균 = %.2f / 100.00 \n", (double) sum/subject);
+
+    //실습7-2
+    int student, subject1, score1, sum1 = 0;
+    printf("학생 수 = ");
+    scanf("%d", &student);
+    printf("과목 개수 = ");
+    scanf("%d", &subject1);
+    printf("\n");
+    for(int i = 1; i <= student; i++){ //학생 수
+        for(int j = 1; j <= subject1; j++){
+            printf("학생%d의 과목%d 점수 = ", i, j);
+            scanf("%d", &score1);
+            sum1 += score1;
+        }
+        printf("총점 = %d / %d \n", sum1, subject1*100);
+        printf("평균 = %.2f / 100.00 \n", (double) sum1/subject1);
+        printf("\n");
+    }
+
     return 0;
 }
 
