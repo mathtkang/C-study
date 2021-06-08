@@ -81,9 +81,6 @@ int main(void){
                     printf("%d / %d = %d\n", (int)num1, (int)num2, (int)result); //정수일때는 몫만 출력
                 }
                 break;
-            default:
-                printf("사칙연산을 바르게 입력하십시오.\n");
-                break;
         }
     } else { //실수 하나라도 존재
 //        printf("실수 하나라도 존재\n");

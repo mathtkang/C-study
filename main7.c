@@ -17,7 +17,10 @@ int main(void){
     }
     printf("끝\n");
 
+    
     //조건연산자 - (조건식) ? (표현식1) : (표현식2)
+    int n1, n2, big_num;
+    
     if(n1 >= n2)
         big_num = n1;
     else
@@ -26,6 +29,8 @@ int main(void){
     big_num = (n1 >= n2) ? n1 : n2;
 
     //switch문
+    char output;
+    
     switch (x) {
         case 1:
             output = 'A'; break;
@@ -37,9 +42,9 @@ int main(void){
             output = '?'; break;
     }
 
- 11-1.실습문제
+// 11-1.실습문제
 
-    실습1
+//    실습1
     char ch;
     printf("input a character >> ");
     scanf("%c", &ch);
@@ -54,7 +59,7 @@ int main(void){
         printf("%c\n",ch);
     }
 
-    실습2
+//    실습2
     int a,b;
     printf("a b >> ");
     scanf("%d%d",&a,&b);
@@ -66,19 +71,19 @@ int main(void){
         printf("a = %d, b = %d\n", b, a);
     }
 
-    실습3
-    double x;
+//    실습3
+    double x1;
     printf("x >> ");
-    scanf("%lf", &x);
+    scanf("%lf", &x1);
 
-    if(x == (int)x ){
+    if(x1 == (int)x1 ){
         printf("x IS an integer");
     }
     else{
         printf("x IS NOT an integer");
     }
 
-    실습4
+//    실습4
     int a1, b1, result;
     printf("a b >> ");
     scanf("%d%d", &a1, &b1);
@@ -94,59 +99,59 @@ int main(void){
     //조건연산자 이용 2
     (a1>=b1) ? printf("%d",a1) : printf("%d",b1) ;
 
-    //실습5
-    int i1,i2,i3;
-    printf("input 3 integers >> ");
-    scanf("%d%d%d", &i1, &i2, &i3);
-    if(i1 > i2){ //i1 > i2
-        if(i1 > i3){ //i1 > i2, i1 > i3 (아직 i2, i3 누가 큰지 모른다)
-            if(i2 > i3){ //i1 > i2 > i3
-                printf("%d %d %d\n", i1, i2, i3);
-            }
-            else{ // //i1 > i3 >= i2
-                printf("%d %d %d\n", i1, i3, i2);
-            }
-        }
-        else{ //i3 >= i1 > i2
-            printf("%d %d %d\n", i3, i1, i2);
-        }
-    }
-    else{ //i2 >= i1
-        if(i2 > i3){ //i2 >= i1, i2 > i3 (아직 i1, i3 누가 큰지 모른다)
-            if(i1 > i3){ //i2 >= i1 > i3
-                printf("%d %d %d\n", i2, i1, i3);
-            }
-            else{ //i2 >= i3 >= i1
-                printf("%d %d %d\n", i2, i3, i1);
-            }
-        }
-        else{ //i3 >= i2 >= i1
-            printf("%d %d %d\n", i3, i2, i1);
-        }
-    }
+//    //실습5
+//    int i1,i2,i3;
+//    printf("input 3 integers >> ");
+//    scanf("%d%d%d", &i1, &i2, &i3);
+//    if(i1 > i2){ //i1 > i2
+//        if(i1 > i3){ //i1 > i2, i1 > i3 (아직 i2, i3 누가 큰지 모른다)
+//            if(i2 > i3){ //i1 > i2 > i3
+//                printf("%d %d %d\n", i1, i2, i3);
+//            }
+//            else{ // //i1 > i3 >= i2
+//                printf("%d %d %d\n", i1, i3, i2);
+//            }
+//        }
+//        else{ //i3 >= i1 > i2
+//            printf("%d %d %d\n", i3, i1, i2);
+//        }
+//    }
+//    else{ //i2 >= i1
+//        if(i2 > i3){ //i2 >= i1, i2 > i3 (아직 i1, i3 누가 큰지 모른다)
+//            if(i1 > i3){ //i2 >= i1 > i3
+//                printf("%d %d %d\n", i2, i1, i3);
+//            }
+//            else{ //i2 >= i3 >= i1
+//                printf("%d %d %d\n", i2, i3, i1);
+//            }
+//        }
+//        else{ //i3 >= i2 >= i1
+//            printf("%d %d %d\n", i3, i2, i1);
+//        }
+//    }
+//
+////    실습6(1/2)
+//    int h1, h2, h3;
+//    printf("세 변의 길이 >> ");
+//    scanf("%d%d%d", &h1, &h2, &h3);
+//    if(h1+h2 <= h3){
+//        printf("삼각형이 아님\n");
+//    }
+//    else{
+//        printf("삼각형\n");
+//    }
+//    if(h1 == h2){
+//        if(h2==h3){
+//            printf("정삼각형\n");
+//        }
+//        else{//h2!=h3
+//            printf("이등변삼각형\n");
+//        }
+//    }
 
-    실습6(1/2)
-    int h1, h2, h3;
-    printf("세 변의 길이 >> ");
-    scanf("%d%d%d", &h1, &h2, &h3);
-    if(h1+h2 <= h3){
-        printf("삼각형이 아님\n");
-    }
-    else{
-        printf("삼각형\n");
-    }
-    if(h1 == h2){
-        if(h2==h3){
-            printf("정삼각형\n");
-        }
-        else{//h2!=h3
-            printf("이등변삼각형\n");
-        }
-    }
+    //실습6(2/2) - 실습5, 6-1 합침
 
-    //실습6(2/2)
-
-    int i1,i2,i3;
+    int i1, i2, i3;
     printf("세 변의 길이 >> ");
     scanf("%d%d%d", &i1, &i2, &i3);
     int h1, h2, h3;

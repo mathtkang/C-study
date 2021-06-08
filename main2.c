@@ -5,21 +5,21 @@
 
 int main(void){
     //수업내용
-//    double a1 = 10.234;
-//    printf("%f",a1);
-//    double b1;
-//    printf("\n 실수를 입력하세요 > ");
-//    scanf("%lf", &b1);
-//    printf("%f", b1);
+    double a1 = 10.234;
+    printf("%f",a1);
+    double b1;
+    printf("\n 실수를 입력하세요 > ");
+    scanf("%lf", &b1);
+    printf("%f", b1);
 
     //test
-//    unsigned int i = 10;
-//    long l2 = 10;
-//    long long ll = 10;
-//    unsigned long ul = 10;
-//    unsigned long long ull = 10;
-//
-//    printf("%u %ld, %lld, %lu, %llu", i, l2, ll, ul, ull);
+    unsigned int i = 10;
+    long l2 = 10;
+    long long ll = 10;
+    unsigned long ul = 10;
+    unsigned long long ull = 10;
+
+    printf("%u %ld, %lld, %lu, %llu", i, l2, ll, ul, ull);
 
 //6-1.실습문제
 
