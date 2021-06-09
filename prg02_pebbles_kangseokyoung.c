@@ -79,7 +79,6 @@ int main(void){
         while (true) { // restart_game <-- 게임을 계속할지 묻는다
             printf("계속하시겠습니까? [y/n] "); //yes:1:true, no:0:false
             char restart[2]; //여기에서 문자열이 아니라 문자(%c)로 받으면 while문이 이중으로 두번 출력돼서 문자열(%s)로 입력받았습니다.
-//            char restart = getchar(); //두 번 반복 출력됨
             scanf("%s", restart);
             
             if(restart[0] == 'y') {
@@ -95,8 +94,6 @@ int main(void){
         }//y or n : while문
         
     }//첫번째 while문
-    
-    
     
     
     return 0;
