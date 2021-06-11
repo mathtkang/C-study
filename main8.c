@@ -110,6 +110,7 @@ int main(void){
     printf("%d의 배수는 %d개입니다.\n", k1, cnt);
     
     //실습8
+    //sol1)
     int n, input2, cnt1, cnt2, cnt3;
     printf("n >> ");
     scanf("%d", &n);
@@ -129,6 +130,30 @@ int main(void){
     printf("양의 정수 : %d개\n", cnt1);
     printf("0       : %d개\n", cnt2);
     printf("음의 정수 : %d개\n", cnt3);
+    
+    //sol2)
+    int nn, xx;
+    int n_pos, n_zero, n_neg;
+    printf("n >> ");
+    scanf("%d", &nn);
+    
+    n_pos = n_zero = n_neg = 0;
+    for (int i = 1; i <= nn; i++) {
+        printf("정수를 입력하세요 >> ");
+        scanf("%d", &xx);
+        
+        if (xx > 0)
+            n_pos++;
+        else if (xx < 0)
+            n_neg++;
+        else
+            n_zero++;
+    }
+    
+    printf("양의 정수 : %d개\n", n_pos);
+    printf("0       : %d개\n", n_zero);
+    printf("음의 정수 : %d개\n", n_neg);
+    
     
     //실습9
     int n1, k2, input3, cnt4;
