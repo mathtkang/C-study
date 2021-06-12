@@ -21,7 +21,7 @@ int main(void){
 //    }
     
     //14-1.실습문제
-    
+
     //실습1
     int n1, x;
     int n_pos, n_zero, n_neg;
@@ -51,7 +51,7 @@ int main(void){
     int n, m, num = 1;
     printf("n m = ");
     scanf("%d%d", &n, &m);
-    
+
     while (i <= n*m) {
         printf("%02d ", num);
         if( num % m == 0){
@@ -73,7 +73,7 @@ int main(void){
         printf("\n");
         star--; //감소되는 변수랑 행의 num변수가 같으면 안된다 (이중으로 감소됨)
     }
-    
+
     //실습2-3
     int num2, star1;
     printf("n = ");
@@ -90,7 +90,7 @@ int main(void){
         printf("\n");
         star1--;
     }
-    
+
     //실습2-4
     int num3, star2, line;
     printf("n = ");
@@ -113,7 +113,7 @@ int main(void){
         printf("\n");
         star2--;
     }
-    
+
     //실습2-5 - 역삼각형 별
     int num4, star3;
     printf("n = ");
@@ -135,8 +135,56 @@ int main(void){
         star3--;
     }
     
-    //실습3
+    //실습3-1
+    int subject, score = 0;
+    char *result;
+
+    for (int i = 1; i <= 5; i++) {
+        printf("학생%d의 과목%d 점수 = ", 1, i);
+        scanf("%d", &subject);
+        if (subject < 60) {
+            score++;
+        }
+    }
+    if (score >= 2){
+        result = "불합격";
+    } else {
+        result = "합격";
+    }
+    printf("과락 = %d개 : %s\n", score, result);
+    
+    //실습3-2
+    int subject1, score1 = 0;
+    char *result1, *zero;
+    for(int i = 1; i <= 5; i++) {
+        for (int j = 1; j <= 5; j++) {
+            printf("학생%d의 과목%d 점수 = ", i, j);
+            scanf("%d", &subject);
+            if (subject1 < 60) {
+                score1++;
+            } else if (subject1 == 0){
+                break; //가까운 반복문 나옴
+            }
+        }
+        if(subject1 == 0){
+            result1 = "불합격";
+            zero = "0점 있음";
+        } else {
+            if (score >= 2){
+                result1 = "불합격";
+            } else {
+                result1 = "합격";
+            }
+        }
         
+        printf("학생%d은(는) %s입니다.(%s)\n\n", score1, result1, zero);
+    }
+    
+    
+    
+    
+    
+    
 
     return 0;
 }
