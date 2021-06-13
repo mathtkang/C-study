@@ -134,7 +134,7 @@ int main(void){
         printf("\n");
         star3--;
     }
-    
+
     //실습3-1
     int subject, score = 0;
     char *result;
@@ -152,39 +152,135 @@ int main(void){
         result = "합격";
     }
     printf("과락 = %d개 : %s\n", score, result);
-    
+
     //실습3-2
     int subject1, score1 = 0;
-    char *result1, *zero;
-    for(int i = 1; i <= 5; i++) {
-        for (int j = 1; j <= 5; j++) {
-            printf("학생%d의 과목%d 점수 = ", i, j);
-            scanf("%d", &subject);
-            if (subject1 < 60) {
+    char *result1;
+    for(int i = 1; i <= 5; i++) { //학생
+        for (int j = 1; j <= 5; j++) { //과목
+            printf("학생%d의 과목%d 점수 >> ", i, j);
+            scanf("%d", &subject1);
+
+            if(subject1 == 0){
+                printf("학생%d은(는) 불합격입니다. (0점 있음)\n", i);
+                break; //가까운 반복문을 나온다.
+            } else if (subject1 < 60){
                 score1++;
-            } else if (subject1 == 0){
-                break; //가까운 반복문 나옴
             }
         }
+
         if(subject1 == 0){
+            score1 = 0;
+            continue; //다음학생으로 넘어간다.
+        }
+        if (score1 >= 2){
             result1 = "불합격";
-            zero = "0점 있음";
         } else {
-            if (score >= 2){
-                result1 = "불합격";
-            } else {
-                result1 = "합격";
+            result1 = "합격";
+        }
+        printf("학생%d은(는) %s입니다. (과락 %d과목)\n", i, result1, score1);
+        score1 = 0;
+    }
+
+    //실습4-1
+    int num5, sum = 0;
+    printf("n = ");
+    scanf("%d", &num5);
+
+    for(int i = 1; i <= num5; i++){
+        sum += i;
+    }
+    printf("%d\n", sum);
+
+    //실습4-2
+    int num6, sum1 = 0;
+    printf("n = ");
+    scanf("%d", &num6);
+    if(num6 == 0){
+        printf("종료합니다.\n");
+    } else {
+        //sol1)
+        for(int i = 1; i <= num6; i++){
+            sum1 += i;
+            printf("%d",i);
+            if(i == num6){
+                printf(" = ");
+            }else{
+                printf(" + ");
             }
         }
-        
-        printf("학생%d은(는) %s입니다.(%s)\n\n", score1, result1, zero);
+        printf("%d\n", sum1);
     }
+
+    //실습5 - part2) 실습3
+    int n2, flag = 0;
+    printf("n = ");
+    scanf("%d", &n2);
+    //flag변수 이용 > 소수 판별
+    for (int i = 2; i <= sqrt(n2); i++) { //sqrt : 제곱근 함수
+        if (n2 % i == 0) { //소수가 아님
+            flag = 1;
+            break;
+        }
+    }
+    //판별한 값 출력
+    if (n2 == 1) {
+        printf("1 is NOT a prime number\n");
+    }
+    else {
+        if (flag == 0){ //소수
+            printf("%d IS a prime number\n", n2);
+        } else { //소수아님
+            printf("%d is NOT a prime number\n", n2);
+        }
+    }
+
+    //실습5-1) while문
+    int pri, cnt, num7; // pri : 소수판정, cnt : 자연수, num : 범위
+    cnt = 2; // cnt는 2 이상의 자연수부터 (1은 소수가 아니다)
+    printf("최대 어떤 정수 이하 소수까지 출력? : ");
+    scanf("%d", &num7); // 최대 출력값을 num으로 설정하기 위해 입력받음
+
+    while(cnt < num7) {
+        pri = 1; // pri 소수판정 위해서, 기본값은 1
+
+        for(int i = 2; i < cnt; i++){ // i는 2부터 cnt값이 되기 전까지 증가시킴 (즉, 2 ≤ i ≤ cnt-1)
+            if(cnt % i == 0) { //소수 아님
+                pri = 0; //소수 아님
+                break; //가까운 반복문 탈출
+            }
+        }
+        if(pri == 1) { //소수라면
+            printf("%d ", cnt); // 해당 숫자를 출력
+        }
+        cnt++; // cnt의 값을 1씩 증가, 최대 num이 되기전까지
+    }
+    printf("\n");
     
-    
-    
-    
-    
-    
+    //실습5-1) for문 + 개수출력
+    int num8, flag1, cnt2 = 0;
+//    flag1 = 1;
+    printf("최대 어떤 정수 이하 소수까지 출력? : ");
+    scanf("%d", &num8); // 최대 출력값을 num으로 설정하기 위해 입력받음
+
+    for(int i = 2; i <= num8; i++) {// i는 2 이상의 자연수부터 (1은 소수가 아니다)
+        flag1 = 1; //소수판정(기본값 1) : 0이면 소수가 아님
+        //위의 줄이 for문 밖에 있으면 안먹고 안에 있어야 정상작동 됨 > for문도 지역전역변수? 근데 이미 밖에서 선언해줬는데 왜 전역변수로 인식이 안되지,,?
+
+        for(int j = 2; j < i; j++){
+            if(i % j == 0) { //소수 아님
+                flag1 = 0;
+                break;
+            }
+        }
+
+        if(flag1 == 1) { //소수
+            printf("%d ", i); // 해당 숫자를 출력
+            cnt2++;
+        }
+    }
+    printf("\n");
+    printf("%d이하 소수는 %d개\n", num8, cnt2);
 
     return 0;
 }
