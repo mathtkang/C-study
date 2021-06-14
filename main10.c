@@ -256,7 +256,7 @@ int main(void){
         cnt++; // cnt의 값을 1씩 증가, 최대 num이 되기전까지
     }
     printf("\n");
-    
+
     //실습5-1) for문 + 개수출력
     int num8, flag1, cnt2 = 0;
 //    flag1 = 1;
@@ -281,6 +281,62 @@ int main(void){
     }
     printf("\n");
     printf("%d이하 소수는 %d개\n", num8, cnt2);
+    
+    //실습6-1
+    int num9;
+    printf("n = ");
+    scanf("%d", &num9);
+
+    while (num9 != 0) {
+        printf("%d\n", num9 % 10);
+        num9 /= 10;
+    }
+
+    //실습6-2
+    int num10;
+    printf("n = ");
+    scanf("%d", &num10);
+
+
+    //2진수로 변환
+
+
+    while (num9 != 0) {
+        printf("%d\n", num9 % 10);
+        num9 /= 10;
+    }
+
+
+    int n3, c = 0, mok, nmg, i1;
+    int arr[10];
+
+    printf("100이하의 정수 입력 : ");
+    scanf("%d", &n3);
+
+    do {
+        mok = n3 / 2;
+        nmg = n3 - mok * 2;
+        arr[c++] = nmg;
+        n3 = mok;
+    } while (mok != 0);
+
+    for (i1 = c - 1; i1 >= 0; i1--)
+    printf("%d", arr[i1]);
+    
+    
+    
+    unsigned int num11;
+    printf("정수를 입력해주세요\n");
+    scanf("%d", &num11);
+
+    printf("2진수 변환 : ");
+    //이진수 출력
+    for (int i = 7; i >= 0; --i) { //8자리 숫자까지 나타냄
+        int result = num11 >> i & 1;
+        printf("%d", result);
+        
+    }
+    
 
     return 0;
 }
