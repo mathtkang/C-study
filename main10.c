@@ -281,15 +281,15 @@ int main(void){
     }
     printf("\n");
     printf("%d이하 소수는 %d개\n", num8, cnt2);
-    
+
     //실습6-1
     int num9;
     printf("n = ");
     scanf("%d", &num9);
 
     while (num9 != 0) {
-        printf("%d\n", num9 % 10);
-        num9 /= 10;
+        printf("%d\n", num9 % 10); //10으로 나눈 나머지 출력(마지막자릿수)
+        num9 /= 10; //10으로 나눈 몫으로 다시 대입(재귀)
     }
 
     //실습6-2
@@ -297,47 +297,21 @@ int main(void){
     printf("n = ");
     scanf("%d", &num10);
 
-
-    //2진수로 변환
-
-
-    while (num9 != 0) {
-        printf("%d\n", num9 % 10);
-        num9 /= 10;
-    }
-
-
-    int n3, c = 0, mok, nmg, i1;
-    int arr[10];
-
-    printf("100이하의 정수 입력 : ");
-    scanf("%d", &n3);
-
-    do {
-        mok = n3 / 2;
-        nmg = n3 - mok * 2;
-        arr[c++] = nmg;
-        n3 = mok;
-    } while (mok != 0);
-
-    for (i1 = c - 1; i1 >= 0; i1--)
-    printf("%d", arr[i1]);
-    
-    
-    
-    unsigned int num11;
-    printf("정수를 입력해주세요\n");
-    scanf("%d", &num11);
-
-    printf("2진수 변환 : ");
-    //이진수 출력
-    for (int i = 7; i >= 0; --i) { //8자리 숫자까지 나타냄
-        int result = num11 >> i & 1;
-        printf("%d", result);
-        
+    while (num10 != 0) { //2진수로 낮은 자리부터 출력
+        printf("%d\n", num10 % 2);
+        num10 /= 2;
     }
     
-
+    //실습6-3
+    int num11, k;
+    printf("n k = ");
+    scanf("%d%d", &num11, &k);
+    
+    while (num11 != 0) { //2진수로 낮은 자리부터 출력
+        printf("%X\n", num11 % k);
+        num11 /= k;
+    }
+    
     return 0;
 }
 
