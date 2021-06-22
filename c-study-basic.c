@@ -24,6 +24,28 @@ main() {
     //&i : i의 값이 아닌, i가 저장되어 있는 메모리 번지를 printf()함수에 넘겨주라는 뜻
     printf("값 = %d, 메모리주소 = %p \n", j, &j); //값 = 1, 메모리주소 = 0012FF78
     
+    //ex41 - 포인터 이해하기
+    int saram_A = 0;
+    int saram_B = 0;
+    int *pointer;
+    int *psaram;
+    
+    pointer = &saram_A;
+    *pointer = 1;
+    printf("%d, %d \n", saram_A, *pointer);
+    
+    psaram = &saram_A;
+    *psaram = 2;
+    printf("%d, %d, %d \n", saram_A, *pointer, *psaram);
+    
+    psaram = &saram_B;
+    *psaram = 3;
+    printf("%d, %d, %d \n", saram_A, saram_B, *pointer);
+    
+    psaram = &saram_B;
+    *psaram = 4;
+    printf("%d, %d, %d, %d \n", saram_A, saram_B, *pointer, *psaram);
+    
     
     
 }
